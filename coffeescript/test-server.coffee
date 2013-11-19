@@ -1,5 +1,6 @@
 should = require('chai').should()
 http = require 'http'
+mediator = require 'mediator'
 
 test = (url) ->
   describe 'A http game server', ->
@@ -19,3 +20,7 @@ test = (url) ->
                   done()
 
 test "http://localhost:#{port}/" for port in [3000, 4000]
+
+describe 'A mediator', ->
+  it 'should print a string', ->
+    mediator.print().should.not.be.empty
