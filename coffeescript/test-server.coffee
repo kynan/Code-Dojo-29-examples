@@ -25,4 +25,8 @@ describe 'A mediator', ->
   it 'should print a string', ->
     mediator.print().should.not.be.empty
   it 'should retrieve a play for player 1', ->
-    mediator.getPlay(1).should.not.be.empty
+    mediator.getPlay 1, (play) ->
+      play.should.not.be.empty
+  it 'should retrieve a play for player 1 which is one of rock, paper, scissors', ->
+    mediator.getPlay 1, (play) ->
+      ['rock', 'paper', 'scissors'].should.include play
