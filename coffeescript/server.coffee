@@ -2,4 +2,6 @@ NAME = 'Frank'
 
 require('zappajs') ->
     @get '/': ->
-        'rock'
+        val = ['rock', 'paper', 'scissors'][Math.floor(Math.random() * 2.99)]
+        console.log val
+        val
