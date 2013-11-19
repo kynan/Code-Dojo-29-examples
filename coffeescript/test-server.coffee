@@ -11,3 +11,8 @@ describe 'A http game server', ->
             res.on 'data', (chunk) ->
                 chunk.toString().should.not.be.empty
                 done()
+    it 'should return one of rock, paper, scissors', (done) ->
+        http.get "http://localhost:3000/", (res) ->
+            res.on 'data', (chunk) ->
+                ['rock', 'paper', 'scissors'].should.include chunk.toString()
+                done()
