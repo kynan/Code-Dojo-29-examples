@@ -30,3 +30,6 @@ describe 'A mediator', ->
   it 'should retrieve a play for player 1 which is one of rock, paper, scissors', ->
     mediator.getPlay 1, (play) ->
       ['rock', 'paper', 'scissors'].should.include play
+  it 'should retrieve a round for both players', ->
+    mediator.getRound (play) ->
+      play.should.not.be.empty
